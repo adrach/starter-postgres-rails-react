@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import api from '../../services/api';
+
 class PostsTable extends React.Component {
   constructor(props) {
     super(props);
@@ -19,15 +21,13 @@ class PostsTable extends React.Component {
 
   getByID() {
     const { filter } = this.state;
-    fetch(`/post/${filter}`)
-      .then(response => response.json())
+    api.posts.get(filter)
       .then(res => (res ? this.setState({ posts: [res] }) : ''))
       .catch(error => window.console.log(error));
   }
 
   fetchPosts() {
-    fetch('/post')
-      .then(response => response.json())
+    api.posts.getAll()
       .then(res => this.setState({ posts: res }))
       .catch(error => window.console.log(error));
   }
@@ -41,10 +41,7 @@ class PostsTable extends React.Component {
 
   handleRemovePost(event, id) {
     event.preventDefault();
-    fetch(`/post/${id}`, {
-      method: 'DELETE',
-    })
-      .then(res => res.json())
+    api.posts.destroy(id)
       .then(res => this.removePost(res))
       .catch(error => window.console.log(error));
   }

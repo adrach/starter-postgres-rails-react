@@ -11,6 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 gem "webpacker", "~> 3.5"
 gem "react-rails", "~> 2.4"
 gem 'jbuilder', '~> 2.5'
+gem 'devise'
 gem 'mini_racer', platforms: :ruby
 
 gem 'bootstrap', '~> 4.1.1'

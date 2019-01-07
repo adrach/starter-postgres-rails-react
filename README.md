@@ -1,5 +1,5 @@
-# README for [starter-postgres-rails-react]
-# Starter Full-Stack Rails+JS Project: Postgres + Rails + React (PRR)
+# [starter-postgres-rails-react]
+# Starter Full-Stack Project: Postgres + Rails + React (PRR)
 
 ## Overview
 

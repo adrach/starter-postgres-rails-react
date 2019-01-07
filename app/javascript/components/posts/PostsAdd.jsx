@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import api from '../../services/api';
+
 class PostsAdd extends React.Component {
   constructor(props) {
     const obj1 = { title: '', author: '', content: '' };
@@ -25,26 +27,11 @@ class PostsAdd extends React.Component {
     const { addPost, refreshPosts } = this.props;
     if (!post) return;
     if (editMode) {
-      fetch(`/post/${post.id}`, {
-        method: 'PUT',
-        body: JSON.stringify(post),
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-      })
+      api.posts.update(post, post.id)
         .then(() => refreshPosts())
         .catch(error => window.console.log(error));
     } else {
-      fetch('/post', {
-        method: 'POST',
-        body: JSON.stringify(post),
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-      })
-        .then(res => res.json())
+      api.posts.create(post)
         .then(res => addPost(res))
         .catch(error => window.console.log(error));
     }
