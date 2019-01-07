@@ -1,6 +1,11 @@
 {
   "name": "starter-postgres-rails-react",
   "private": true,
+  "scripts": {
+    "db:create": "rails db:create",
+    "db:migrate": "rails db:migrate",
+    "db:seed": "rails db:seed",
+  },
   "dependencies": {
     "@rails/webpacker": "3.5",
     "babel-preset-react": "^6.24.1",
