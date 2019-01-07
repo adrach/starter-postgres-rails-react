@@ -5,7 +5,7 @@ class PostsAdd extends React.Component {
   constructor(props) {
     const obj1 = { title: '', author: '', content: '' };
     super(props);
-    this.state = { post: obj1, editMode: false };  
+    this.state = { post: obj1, editMode: false };
     this.handleAddPost = this.handleAddPost.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.updateAction = this.updateAction.bind(this);
@@ -33,8 +33,8 @@ class PostsAdd extends React.Component {
           'Content-Type': 'application/json',
         },
       })
-      .then(res => refreshPosts())
-      .catch(error => console.log(error));
+        .then(() => refreshPosts())
+        .catch(error => window.console.log(error));
     } else {
       fetch('/post', {
         method: 'POST',
@@ -44,9 +44,9 @@ class PostsAdd extends React.Component {
           'Content-Type': 'application/json',
         },
       })
-      .then(res => res.json())
-      .then(res => addPost(res))
-      .catch(error => console.log(error));
+        .then(res => res.json())
+        .then(res => addPost(res))
+        .catch(error => window.console.log(error));
     }
   }
 
@@ -63,7 +63,9 @@ class PostsAdd extends React.Component {
         <div className="card-body">
           <form onSubmit={this.handleAddPost}>
             <div className="form-group">
-              <label htmlFor="title">Title</label>
+              <label htmlFor="title">
+                Title
+              </label>
               <input
                 type="text"
                 className="form-control"
@@ -116,7 +118,7 @@ class PostsAdd extends React.Component {
 
 PostsAdd.propTypes = {
   addPost: PropTypes.func.isRequired,
-  refreshPosts: PropTypes.func.isRequired
+  refreshPosts: PropTypes.func.isRequired,
 };
 
 export default PostsAdd;

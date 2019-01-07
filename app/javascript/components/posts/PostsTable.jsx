@@ -21,15 +21,15 @@ class PostsTable extends React.Component {
     const { filter } = this.state;
     fetch(`/post/${filter}`)
       .then(response => response.json())
-      .then(res => res ? this.setState({ posts: [res] }) : '')
-      .catch(error => console.log(error));
+      .then(res => (res ? this.setState({ posts: [res] }) : ''))
+      .catch(error => window.console.log(error));
   }
 
   fetchPosts() {
     fetch('/post')
       .then(response => response.json())
       .then(res => this.setState({ posts: res }))
-      .catch(error => console.log(error));
+      .catch(error => window.console.log(error));
   }
 
   handleEditPost(event, id) {
@@ -44,27 +44,28 @@ class PostsTable extends React.Component {
     fetch(`/post/${id}`, {
       method: 'DELETE',
     })
-    .then(res => res.json())
-    .then(res => this.removePost(res))
-    .catch(error => console.log(error));
+      .then(res => res.json())
+      .then(res => this.removePost(res))
+      .catch(error => window.console.log(error));
   }
 
   removePost(id) {
+    const { posts } = this.state;
     this.setState({
-      posts: this.state.posts.filter((post) => { 
-        return post.id !== id
-      })
+      posts: posts.filter(post => post.id !== id),
     });
   }
 
   addPost(post) {
+    const { posts } = this.state;
     this.setState({
-      posts: [post, ...this.state.posts]
-    })
+      posts: [post, ...posts],
+    });
   }
 
   refreshPosts() {
-    this.setState({posts: this.state.posts});
+    const { posts } = this.state;
+    this.setState({ posts });
   }
 
   handleChange(event) {

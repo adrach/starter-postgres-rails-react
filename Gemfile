@@ -35,6 +35,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   gem 'byebug'
   gem 'rubocop', require: false
+  gem 'rubocop-airbnb'
 end
 
 group :development do

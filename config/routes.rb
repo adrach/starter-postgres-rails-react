@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   # CRUD
   resources :post, except: :index
   get '/post' => 'post#get_posts'
-
 end
