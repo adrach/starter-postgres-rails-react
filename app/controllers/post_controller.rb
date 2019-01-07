@@ -1,13 +1,14 @@
 class PostController < ApplicationController
     before_action :set_post, only: [:show, :update, :destroy]
-    
+
     # GET /index
     def index
+      @welcome_msg = "Welcome to ReactOnRails demo"
     end
 
     # GET /posts
     def get_posts
-      @posts = Post.all.order('id desc')
+      @posts = Post.order('id desc')
       json_response(@posts)
     end
   
@@ -38,6 +39,10 @@ class PostController < ApplicationController
 
     def set_post
       @post = Post.find_by_id(params[:id])
+    end
+
+    def json_response(object, status = :ok)
+      render status: status, json: object
     end
 end
   

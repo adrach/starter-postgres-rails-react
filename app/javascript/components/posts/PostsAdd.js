@@ -118,4 +118,5 @@ PostsAdd.propTypes = {
   addPost: PropTypes.func.isRequired,
   refreshPosts: PropTypes.func.isRequired
 };
+
 export default PostsAdd;
