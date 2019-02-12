@@ -1,4 +1,5 @@
 class Api::PostController < Api::BaseController
+  before_action :authenticate_user!
   before_action :set_post, only: [:show, :update, :destroy]
 
   def index
@@ -7,7 +8,7 @@ class Api::PostController < Api::BaseController
   end
 
   def create
-    @post = Post.create!(post_params)
+    @post = current_user.posts.create!(post_params)
     render json: @post
   end
 
@@ -28,7 +29,7 @@ class Api::PostController < Api::BaseController
   private
 
   def post_params
-    params.permit(:id, :title, :author, :content, :is_backlog)
+    params.permit(:id, :title, :content)
   end
 
   def set_post

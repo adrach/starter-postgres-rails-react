@@ -5,7 +5,7 @@ import api from '../../services/api';
 
 class PostsAdd extends React.Component {
   constructor(props) {
-    const obj1 = { title: '', author: '', content: '' };
+    const obj1 = { title: '', content: '' };
     super(props);
     this.state = { post: obj1, editMode: false };
     this.handleAddPost = this.handleAddPost.bind(this);
@@ -17,7 +17,7 @@ class PostsAdd extends React.Component {
     if (post) {
       this.setState({ post, editMode: true });
     } else {
-      this.setState({ post: { title: '', author: '', content: '' }, editMode: false });
+      this.setState({ post: { title: '', content: '' }, editMode: false });
     }
   }
 
@@ -60,18 +60,6 @@ class PostsAdd extends React.Component {
                 placeholder="Enter title"
                 onChange={this.handleChange}
                 value={post.title}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="author">Author</label>
-              <input
-                type="text"
-                className="form-control"
-                id="author"
-                placeholder="author"
-                onChange={this.handleChange}
-                value={post.author}
               />
             </div>
 

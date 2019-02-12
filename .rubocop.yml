@@ -1,3 +1,15 @@
 inherit_from:
   - .rubocop_airbnb.yml
-#  - .rubocop_todo.yml
+Metrics/LineLength:
+  Max: 200
+AllCops:
+  Exclude:
+    - bin/*
+    - node_modules/**/*
+    - db/**/*
+Airbnb/OptArgParameters:
+  Enabled:
+    false
+Airbnb/DefaultScope:
+  Enabled:
+    false

@@ -5,6 +5,7 @@ const apiFetch = (url, method, body) => (
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
+      'X-CSRF-Token': document.querySelector('meta[name=csrf-token]').content,
     },
   }).then(res => res.json())
 );

@@ -10,7 +10,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem "webpacker", "~> 3.5"
 gem "react-rails", "~> 2.4"
-gem 'jbuilder', '~> 2.5'
+gem 'rack-cors' # cross domain
+gem 'active_model_serializers' # serializers
 gem 'devise'
 gem 'mini_racer', platforms: :ruby
 
