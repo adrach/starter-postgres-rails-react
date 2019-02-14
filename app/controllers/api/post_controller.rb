@@ -22,7 +22,7 @@ class Api::PostController < Api::BaseController
   end
 
   def destroy
-    @post.destroy
+    @post.discard
     render json: @post.id
   end
 
