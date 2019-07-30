@@ -6,7 +6,7 @@ ruby '2.5.5'
 gem 'rails', '~> 5.2.2'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
-gem 'sass-rails', '~> 5.0'
+gem 'sassc-rails'
 gem 'uglifier', '>= 1.3.0'
 gem "webpacker", "~> 3.5"
 gem "react-rails", "~> 2.4"
@@ -16,7 +16,7 @@ gem 'active_model_serializers' # serializers
 gem 'devise'
 gem 'mini_racer', platforms: :ruby
 
-gem 'bootstrap', '~> 4.1.1'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -53,11 +53,14 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
   gem 'rails-controller-testing'
+end
+
+group :test, :development do
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

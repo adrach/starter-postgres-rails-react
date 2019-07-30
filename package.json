@@ -1,6 +1,6 @@
 {
   "name": "starter-postgres-rails-react",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .jsx,.js ./app/javascript/**/*",
@@ -10,22 +10,23 @@
     "db:seed": "rails db:seed"
   },
   "dependencies": {
-    "@rails/webpacker": "3.5",
-    "babel-eslint": "^10.0.1",
-    "babel-preset-react": "^6.24.1",
-    "prop-types": "^15.6.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react_ujs": "^2.4.4"
+    "@babel/preset-react": "^7.0.0",
+    "@rails/webpacker": "4.0.7",
+    "babel-eslint": "^10.0.2",
+    "core-js": "^3.1.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react_ujs": "^2.5.0"
   },
   "devDependencies": {
-    "eslint": "^5.6.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
-    "husky": "^1.1.4",
-    "webpack-dev-server": "2.11.2"
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.2",
+    "webpack-dev-server": "3.7.2"
   },
   "husky": {
     "hooks": {

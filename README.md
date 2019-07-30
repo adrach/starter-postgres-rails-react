@@ -18,7 +18,7 @@ Project/
   db/
   lib/
   public/
-  test/
+  spec/
   vendor/
   Gemfile
   package.json
@@ -32,7 +32,7 @@ Before installing, please make sure to have global installations of
 * [node v8 or higher](https://nodejs.org/en/download/)
 * npm v6 or higher
 * [PostgreSQL](https://www.postgresql.org/download/) (if running a local DB instance)
-* [Ruby On Rails](https://rubyonrails.org/) (ruby@2.5.3 & rails@5.2.2)
+* [Ruby On Rails](https://rubyonrails.org/) (ruby@2.5.5 & rails@5.2.2)
 
 ## Installation
 1. Execute `bundle install && npm install` to configure the local environment.
@@ -55,16 +55,16 @@ This application uses npm and rails scripts for testing, development, and deploy
 * `$ rails db:create`: perform DB initialization
 * `$ rails db:migrate`: perform DB migrations
 * `$ rails db:seed`: perform DB seeding
+* `$ rspec`: run BE tests
 * `$ rubocop`: perform linting of the BE code
 * `$ npm run lint`: perform linting of the FE code
 
-## BE Endpoints
+## API Endpoints
 
-### `POST /posts`: Create a New Post
-This endpoint creates a new record. An example of the payload (input data) is provided below:
+### `POST /api/post`: Create a New Post
+This endpoint creates a new Post with current user as author. An example of the payload (input data) is provided below:
 ```
 body: {
-    author : String,    /* required */
     content: Text,      /* required */
     title  : String     /* required */
     }
@@ -81,7 +81,7 @@ let response = {
     }
 ```
 
-### `GET /posts`: Get all Posts
+### `GET /api/post`: Get all Posts
 This endpoint returns the complete set of available Posts. No input data is required
 The output is provided in array with each object having the structure described above:
 ```
@@ -96,12 +96,12 @@ let response = {
     }
 ```
 
-### `GET /posts/:id`: Get a Post by ID
+### `GET /api/post/:id`: Get a Post by ID
 This endpoint returns an individual Post by ID. The ID is provided as a URI parameter.
-The output is the same as from `POST /posts`
+The output is the same as from `POST /api/post`
 
-### `PUT /posts/:id`: Update a Post by ID
-This endpoint updates an existing Post by ID. The input/output formats are the same as in `POST /posts`
+### `PUT /api/post/:id`: Update a Post by ID
+This endpoint updates an existing Post by ID. The input/output formats are the same as in `POST /api/post`
 
-### `DELETE /posts/:id`: Delete a Post by ID
+### `DELETE /api/post/:id`: Delete a Post by ID
 This endpoint deletes an individual Post by ID. The ID is provided as a URI parameter.

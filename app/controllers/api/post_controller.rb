@@ -3,13 +3,7 @@ class Api::PostController < Api::BaseController
   before_action :set_post, only: [:show, :update, :destroy]
 
   def index
-    # Bullet eager loading trigger
-    # Will raise error only in tests, for dev just log msg
-    Post.all.each do |post|
-      p post.user.email
-    end
-
-    @posts = Post.order('id desc')
+    @posts = Post.includes(:user).order('id desc')
     render json: @posts
   end
 
