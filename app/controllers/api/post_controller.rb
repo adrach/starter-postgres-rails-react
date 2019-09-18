@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Api::PostController < Api::BaseController
   before_action :authenticate_user!
-  before_action :set_post, only: [:show, :update, :destroy]
+  before_action :set_post, only: %i[show update destroy]
 
   def index
     @posts = Post.includes(:user).order('id desc')

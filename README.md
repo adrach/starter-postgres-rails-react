@@ -32,7 +32,7 @@ Before installing, please make sure to have global installations of
 * [node v8 or higher](https://nodejs.org/en/download/)
 * npm v6 or higher
 * [PostgreSQL](https://www.postgresql.org/download/) (if running a local DB instance)
-* [Ruby On Rails](https://rubyonrails.org/) (ruby@2.5.5 & rails@5.2.2)
+* [Ruby On Rails](https://rubyonrails.org/) (ruby@2.6.4 & rails@6.0.0)
 
 ## Installation
 1. Execute `bundle install && npm install` to configure the local environment.

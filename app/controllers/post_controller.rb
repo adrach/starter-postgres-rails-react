@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class PostController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @welcome_msg = "Welcome to ReactOnRails demo"
+    @welcome_msg = 'Welcome to ReactOnRails demo'
   end
 end

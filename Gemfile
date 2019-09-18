@@ -1,20 +1,22 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.5'
+ruby '2.6.4'
 
-gem 'rails', '~> 5.2.2'
-gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.11'
-gem 'sassc-rails'
-gem 'uglifier', '>= 1.3.0'
-gem "webpacker", "~> 3.5"
-gem "react-rails", "~> 2.4"
-gem 'discard', '~> 1.0' # soft-delete
-gem 'rack-cors' # cross domain
 gem 'active_model_serializers' # serializers
 gem 'devise'
+gem 'discard', '~> 1.0' # soft-delete
 gem 'mini_racer', platforms: :ruby
+gem 'pg', '>= 0.18', '< 2.0'
+gem 'puma', '~> 4.1'
+gem 'rack-cors' # cross domain
+gem 'rails', '~> 6.0.0'
+gem 'react-rails', '~> 2.4'
+gem 'sassc-rails'
+gem 'uglifier', '>= 1.3.0'
+gem 'webpacker', '~> 4.0'
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
@@ -36,27 +38,26 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  gem 'byebug'
-  gem 'rubocop', require: false
-  gem 'rubocop-airbnb'
   gem 'bullet', require: true
+  gem 'byebug'
+  gem 'rubocop', '~> 0.74.0', require: false
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  gem 'annotate'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'annotate'
+  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'webdrivers'
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
-  gem 'rails-controller-testing'
+  gem 'webdrivers'
 end
 
 group :test, :development do
@@ -64,4 +65,4 @@ group :test, :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

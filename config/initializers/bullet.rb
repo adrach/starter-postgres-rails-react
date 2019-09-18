@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.config.after_initialize do
   if Rails.env.development? || Rails.env.test?
     Bullet.enable = true
