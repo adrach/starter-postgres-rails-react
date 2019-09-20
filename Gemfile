@@ -8,6 +8,7 @@ ruby '2.6.4'
 gem 'active_model_serializers' # serializers
 gem 'devise'
 gem 'discard', '~> 1.0' # soft-delete
+gem 'kaminari' # pagination
 gem 'mini_racer', platforms: :ruby
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
