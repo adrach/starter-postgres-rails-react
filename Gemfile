@@ -11,7 +11,7 @@ gem 'discard', '~> 1.0' # soft-delete
 gem 'kaminari' # pagination
 gem 'mini_racer', platforms: :ruby
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'rack-cors' # cross domain
 gem 'rails', '~> 6.0.0'
 gem 'react-rails', '~> 2.4'
